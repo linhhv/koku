@@ -1,0 +1,300 @@
+---
+generators:
+  - EC2Generator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      processor_arch: 64-bit
+      resource_id: 55555555
+      product_sku: VEAJHRNKTJZQ
+      region: us-east-1a
+      tags:
+        resourceTags/user:version: prod
+        resourceTags/user:dashed-key-on-aws: dashed-value
+      cost_category:
+        costCategory/env: prod
+      instance_type:
+        inst_type: m5.large
+        physical_cores: 1
+        vcpu: 2
+        memory: '8 GiB'
+        storage: 'EBS Only'
+        family: 'General Purpose'
+        cost: 0.096
+        rate: 0.096
+  - EC2Generator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      processor_arch: 64-bit
+      resource_id: 55555556
+      product_sku: VEAJHRNKTJAA
+      region: us-east-1a
+      tags:
+        resourceTags/user:environment: dev
+        resourceTags/user:version: beta
+        resourceTags/user:dashed-key-on-aws: dashed-value
+        resourceTags/user:com_REDHAT_rhel: RHEL 8 ELS
+        resourceTags/user:com_redhat_rhel_sla: self-support
+        resourceTags/user:CoM_RedHat_Rhel_varianT: Workstation
+        resourceTags/user:com_redhat_rhel_usage: disaster Recovery
+      cost_category:
+        costCategory/env: prod
+      instance_type:
+        inst_type: m5.large
+        physical_cores: 1
+        vcpu: 2
+        memory: '8 GiB'
+        storage: 'EBS Only'
+        family: 'General Purpose'
+        cost: 0.096
+        rate: 0.096
+  - EC2Generator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      processor_arch: 64-bit
+      resource_id: 55555557
+      product_sku: VEAJHRNKTJAB
+      region: us-east-1a
+      tags:
+        resourceTags/user:environment: dev
+        resourceTags/user:version: gamma
+        resourceTags/user:dashed-key-on-aws: dashed-value
+        resourceTags/user:com_REDHAT_rhel: RHEL 7 ELS
+        resourceTags/user:com_redhat_rhel_sla: Standard
+        resourceTags/user:CoM_RedHat_Rhel_varianT: Workstation
+      cost_category:
+        costCategory/env: stage
+        costCategory/Organization: Ninja
+      instance_type:
+        inst_type: m5.large
+        physical_cores: 1
+        vcpu: 2
+        memory: '8 GiB'
+        storage: 'EBS Only'
+        family: 'General Purpose'
+        cost: 0.096
+        rate: 0.096
+  - EC2Generator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      processor_arch: 64-bit
+      resource_id: 55555558
+      product_sku: VEAJHRNKTJAC
+      region: us-east-1a
+      tags:
+        resourceTags/user:version: master
+        resourceTags/user:dashed-key-on-aws: dashed-value
+      cost_category:
+        costCategory/env: ephemeral
+        costCategory/Organization: Ninja
+      instance_type:
+        inst_type: m5.large
+        physical_cores: 1
+        vcpu: 2
+        memory: '8 GiB'
+        storage: 'EBS Only'
+        family: 'General Purpose'
+        cost: 0.096
+        rate: 0.096
+  - S3Generator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      product_sku: VEAJHRNAAAAA
+      amount: 10
+      rate: 0.05
+      tags:
+        resourceTags/user:storageclass: charlie
+      cost_category:
+        costCategory/env: stage
+        costCategory/Organization: Ninja
+  - EBSGenerator:
+      product_sku: VEAJHRNBBBBA
+      resource_id: 12345671
+      amount: 10
+      rate: 0.01
+      tags:
+        resourceTags/user:storageclass: bravo
+      cost_category:
+        costCategory/env: stage
+  - EBSGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      product_sku: VEAJHRNBBBBB
+      resource_id: 12345672
+      amount: 10
+      rate: 0.01
+      tags:
+        resourceTags/user:storageclass: delta
+      cost_category:
+        costCategory/env: ephemeral
+  - EBSGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      product_sku: VEAJHRNBBBBC
+      resource_id: 12345673
+      amount: 10
+      rate: 0.01
+      tags:
+        resourceTags/user:storageclass: epsilon
+      cost_category:
+        costCategory/env: ephemeral
+  - EBSGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      product_sku: VEAJHRNBBBBD
+      resource_id: 12345674
+      amount: 10
+      rate: 0.01
+      tags:
+        resourceTags/user:storageclass: gamma
+      cost_category:
+        costCategory/env: ephemeral
+  - RDSGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      tags:
+        resourceTags/user:app: analytics
+      cost_category:
+        costCategory/env: prod
+  - VPCGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      tags:
+        resourceTags/user:app: cost
+      cost_category:
+        costCategory/env: prod
+  - Route53Generator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      # product_family: DNS Zone
+      tags:
+        resourceTags/user:app: catalog
+      cost_category:
+        costCategory/env: ephemeral
+  - Route53Generator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      product_family: DNS Query
+      tags:
+        resourceTags/user:app: cost
+      cost_category:
+        costCategory/env: prod
+  - Route53Generator:
+      product_family: DNS Query
+      tags:
+        resourceTags/user:app: analytics
+      cost_category:
+        costCategory/env: ephemeral
+  - DataTransferGenerator:
+      product_sku: VEAJHRNKTJZQ
+      resource_id: i-55555555
+      tags:
+        resourceTags/user:app: analytics
+      cost_category:
+        costCategory/env: prod
+  - DataTransferGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      product_sku: VEAJHRNKTJAA
+      resource_id: i-55555556
+      tags:
+        resourceTags/user:app: cost
+      cost_category:
+        costCategory/env: ephemeral
+  - DataTransferGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      product_sku: VEAJHRNKTJAB
+      resource_id: i-55555557
+      tags:
+        resourceTags/user:app: catalog
+      cost_category:
+        costCategory/env: prod
+  - DataTransferGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      product_sku: VEAJHRNKTJAC
+      resource_id: i-55555558
+      tags:
+        resourceTags/user:app: catalog
+      cost_category:
+        costCategory/env: prod
+        costCategory/Organization: Ninja
+  - DataTransferGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      product_sku: VEAJHRNAAAAA
+      resource_id: i-55555559
+      tags:
+        resourceTags/user:app: cost
+      cost_category:
+        costCategory/env: ephemeral
+  - DataTransferGenerator:
+      resource_id: ''
+      product_sku: AERJHRNCCCCC
+      product_code: AmazonDynamoDB
+      product_name: Amazon DynamoDB
+      tags:
+        resourceTags/user:app: catalog
+      cost_category:
+        costCategory/env: prod
+  - DataTransferGenerator:
+      resource_id: ''
+      product_sku: AERJHRNCCCCD
+      product_code: AmazonDynamoDB
+      product_name: Amazon DynamoDB
+      tags:
+        resourceTags/user:app: catalog
+      cost_category:
+        costCategory/env: prod
+  - DataTransferGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      resource_id: ''
+      product_sku: AERJHRNCCCCE
+      product_code: AmazonDynamoDB
+      product_name: Amazon DynamoDB
+      tags:
+        resourceTags/user:app: catalog
+      cost_category:
+        costCategory/env: prod
+        costCategory/Organization: Ninja
+  - DataTransferGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      resource_id: i-55555554
+      product_sku: AERJHRNCCCCC
+      product_code: AmazonRDS
+      product_name: Amazon Relational Database Service
+      tags:
+        resourceTags/user:app: analytics
+      cost_category:
+        costCategory/env: prod
+  - MarketplaceGenerator:
+      start_date: {{start_date}}
+      end_date: {{end_date}}
+      processor_arch: 32-bit
+      resource_id: 25555555
+      product_sku: VEAJHRNKTJZZ
+      legal_entity: 'Red Hat Inc.'
+      region: us-east-1a
+      tags:
+        resourceTags/aws:createdBy: AssumedRole:AROAYSLL3JVQ6DYUNKWQJ:1637692740557658269
+      cost_category:
+        costCategory/env: prod
+      instance_type:
+        inst_type: m5.large
+        vcpu: 2
+        memory: '8 GiB'
+        storage: 'EBS Only'
+        family: 'General Purpose'
+        cost: 1.000
+        rate: 0.500
+        rate_code: SDFKLSDHCICLKKDS.LKHSSDUQHI.SDHLJKKJDQ
+        rate_id: 2343582976
+        subscription_id: 2346788732
+
+
+accounts:
+  payer: 9999999999998
+  user:
+    - 9999999999998

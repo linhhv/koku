@@ -1,0 +1,20 @@
+---
+customer:
+  account_id: 11
+  org_id: 111
+  email: test@enstructure.net
+  user: enstructure_customer
+  sources:
+    - aws_source:
+      source_name: Test AWS Source
+      source_type: "AWS-local"
+      authentication:
+        credentials:
+          role_arn: arn:aws:iam::111111111111:role/CostManagement
+      billing_source:
+        data_source:
+          bucket: /tmp/local_bucket
+koku:
+  host: localhost
+  port: 8000
+  prefix: /api
